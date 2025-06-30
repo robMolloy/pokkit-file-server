@@ -22,7 +22,7 @@ migrate(
         {
           hidden: false,
           id: "file2359244304",
-          maxSelect: 99,
+          maxSelect: 1,
           maxSize: 0,
           mimeTypes: [],
           name: "file",
