@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "./backend/instance/pocketbase serve --http=\"0.0.0.0:8090\""    
+    "start:mac": "./backend/instance/pocketbase_mac serve --http=\"0.0.0.0:8090\"",
+    "start:windows": "./backend/instance/pocketbase_windows.exe serve --http=\"0.0.0.0:8090\"",
+    "start:raspberrypi": "./backend/instance/pocketbase_raspberrypi serve --http=\"0.0.0.0:8090\""
   }
 }

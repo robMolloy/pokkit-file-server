@@ -6,7 +6,11 @@ Pocketbase enables direct file uploads, so simply use the pocketbase UI and log 
 
 ## Running
 
-To start the File Server, simply run `npm run start` or alternatively run the pocketbase instance directly with `./backend/instance/pocketbase serve --http=\"0.0.0.0:8090\"`
+To start the File Server, simply run npm run commands or alternatively run the pocketbase instance directly e.g. `./backend/instance/pocketbase_mac serve --http=\"0.0.0.0:8090\"`. The npm commands are as follows;
+
+- `npm run start:mac`
+- `npm run start:windows`
+- `npm run start:raspberrypi`
 
 Once running, the pocketbase UI should be available at `http://localhost:8090/_`, `http://127.0.0.1:8090/_` or, if accessing from another computer `http://{IP_ADDRESS}:8090/_`
 
