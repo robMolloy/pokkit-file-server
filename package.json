@@ -1,17 +1,8 @@
 {
-  "name": "pokkit-chat",
+  "name": "pokkit-simple-nas",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "tsc": "node_modules/.bin/tsc --noemit --watch",
-    "lint": "next lint",
-    "db:start": "./pocketbase-leader/pocketbase serve",
-    "db:start:dev": "pocketbase-leader/start-pocketbase.js",
-    "dev1": "npm run dev",
-    "dev2": "npm run tsc",
-    "dev3": "./pocketbase-leader/pocketbase serve --http=\"0.0.0.0:8090\""
+    "start": "./backend/instance serve"    
   }
 }
