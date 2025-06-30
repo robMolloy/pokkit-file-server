@@ -48,16 +48,16 @@ $app.onServe().bindFunc((e) => {
 
 All security rules are set to superuser only so cannot be accessed outside of the pocketbase UI or without the superuser credentials.
 
-By default all files are "protected", so not publicly accessible even if you know their full url. If this is a problem, simply open the files collection settings and add disable the "protected" toggle.
+By default all files are "protected", so not publicly accessible even if you know their full url. If this is a problem, simply open the files collection settings and disable the "protected" toggle.
 
 For more info see https://pocketbase.io/docs/files-handling/#protected-files
 
 ## Customisation
 
-Initial settings allow file sizes of up to 1 Terrabyte. This can be change in the files collection settings.
+Initial settings allow file sizes of up to 1 Terrabyte. This can be changed in the files collection settings.
 
 ## Extension
 
-A worthwhile extension could be to improve the on file upload hook to write the fileName and fileType.
-
 Any additional suggestions can be recorded here;
+
+- on create or update write the fileName and fileType
