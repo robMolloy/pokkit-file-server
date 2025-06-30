@@ -20,3 +20,10 @@ onRecordAfterUpdateSuccess((e) => {
 
   e.next();
 }, "files");
+
+$app.onServe().bindFunc((e) => {
+  e.server.readTimeout = 300000000000; // nanoseconds
+  e.server.writeTimeout = 300000000000; // nanoseconds
+
+  return e.next();
+});
