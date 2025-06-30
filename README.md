@@ -1,40 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokkit Simple Nas
 
-## Getting Started
+## Running
 
-First, run the development server:
+To start the NAS, simply run `npm run start` or alternatively run the pocketbase instance directly with `./backend/instance/pocketbase serve --http=\"0.0.0.0:8090\"`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Once running, pocketbase should be available at `http://localhost:8090/_`, `http://127.0.0.1:8090/_` or, if accessing from another computer `http://{IP_ADDRESS}:8090/_`
+
+Pocketbase enables direct file uploads, so simply use the pocketbase UI and log in as superuser.
+
+## Backups
+
+If portablility is required, use the backup functionality provided in the pocketbase UI to move files and settings.
+
+## Troubleshooting
+
+Pocketbase is a very reliable piece of software, there are no potential known bugs but you may need to increase read and write timeout for large files. The easiest way to do this is within a Go hook, as follows;
+
+```golang
+app.OnServe().BindFunc(func(e *core.ServeEvent) error {
+    e.Server.ReadTimeout = 5 * time.Minute
+    e.Server.WriteTimeout = 5 * time.Minute
+
+    return e.Next()
+})
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Security
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+By default all files are publicly accessible if you know their full url. If this is a problem, simply open the "edit collection" settings and add enable the "protected" toggle.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+For more info see https://pocketbase.io/docs/files-handling/#protected-files
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Extension
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+A worthwhile extension could be to add a simple hook on file upload that writes the title and fileType
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If any additional suggestions they can be recorded here
