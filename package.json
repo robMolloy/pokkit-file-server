@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "./backend/instance serve"    
+    "start": "./backend/instance/pocketbase serve"    
   }
 }
