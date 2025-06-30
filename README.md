@@ -1,12 +1,14 @@
 # Pokkit File Server
 
-Pokkit File Server is easy to get up and running and allows files to be stored and shared across your network. By copying the same migrations to a hosted instance of pocketbase the same service can be achieved as cloud storage. Although not tested, by using ngrok, cloud storage could be enabled across the internet but hosted on your device.
+Pokkit File Server as an alternative to other file sharing options either for over your local network or cloud storage. There are many alternatives on the market but gives complete control and ownership of data, without being complex to set up.
+
+Although not tested, by using ngrok, cloud storage could be enabled across the internet but hosted on your device.
 
 Pocketbase enables direct file uploads, so simply use the pocketbase UI and log in as superuser.
 
 ## Running
 
-To start the File Server, simply run npm run commands or alternatively run the pocketbase instance directly e.g. `./backend/instance/pocketbase_mac serve --http=\"0.0.0.0:8090\"`. The npm commands are as follows;
+To start the File Server, simply run npm run command appropriate to your machine or alternatively run the pocketbase instance directly e.g. `./backend/instance/pocketbase_mac serve --http=\"0.0.0.0:8090\"`. The npm commands are as follows;
 
 - `npm run start:mac`
 - `npm run start:windows`
@@ -58,7 +60,7 @@ For more info see https://pocketbase.io/docs/files-handling/#protected-files
 
 ## Customisation
 
-Initial settings allow file sizes of up to 1 Terrabyte. This can be changed in the files collection settings.
+Initial settings allow file sizes of up to 1 Terrabyte. This can be increased/decreased in the files collection settings.
 
 ## Extension
 
